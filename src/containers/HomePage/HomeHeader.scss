@@ -1,6 +1,6 @@
 .home-header-container {
     height: 60px;
-    border: 1px solid red;
+
     width: 100%;
     padding: 0 20px;
 
@@ -65,18 +65,34 @@
 
             .language-vi {
                 cursor: pointer;
+                opacity: 0.5;
 
                 &:active {
-                    color: orange;
+                    opacity: 1;
+
+                    span {
+                        color: orange;
+                    }
+
+                }
+
+                &:hover {
+                    opacity: 1;
                 }
             }
 
             .language-en {
                 margin: 0 10px;
                 cursor: pointer;
+                opacity: 0.5;
 
                 &:active {
+                    opacity: 1;
                     color: blue;
+                }
+
+                &:hover {
+                    opacity: 1;
                 }
             }
         }
