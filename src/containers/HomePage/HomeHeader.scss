@@ -18,6 +18,7 @@
                 background: url(../../assets/logo.svg) left no-repeat;
                 margin-left: 10px;
                 background-size: 50%;
+                cursor: pointer;
                 height: 100%;
                 width: 100%;
             }
@@ -161,6 +162,7 @@
 
     .content-down {
         height: 35%;
+        padding-bottom: 10px;
         display: flex;
         align-items: flex-end;
         justify-content: center;

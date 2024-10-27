@@ -76,7 +76,7 @@ class Login extends Component {
     }
 
     handlerKeyDown = (event) => {
-        const keyCode = event.which || event.keyCode;
+        const keyCode = event.which || event.keyCode; ///old code syntax
         if (keyCode === KeyCodeUtils.ENTER) {
             event.preventDefault();
             if (!this.btnLogin.current || this.btnLogin.current.disabled) return;
@@ -99,7 +99,6 @@ class Login extends Component {
     render() {
         const { username, password, loginError } = this.state;
         const { lang } = this.props;
-
         return (
             <div className="login-wrapper">
                 <div className="login-container">
@@ -130,6 +129,7 @@ class Login extends Component {
                                 className="form-control"
                                 value={password}
                                 onChange={this.onPasswordChange}
+
                             />
                         </div>
 

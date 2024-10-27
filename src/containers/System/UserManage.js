@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ModalEditUser from './ModalEditUser';
 import { connect } from 'react-redux';
 import './UserManage.scss'
-import { getAllUsers, createNewUser, deleteUserService, editUserService } from '../../services/userServive'
+import { getAllUsers, createNewUserService, deleteUserService, editUserService } from '../../services/userServive'
 import ModalUser from './ModalUser';
 import { emitter } from '../../utils/emitter'
 class UserManage extends Component {
@@ -40,7 +40,7 @@ class UserManage extends Component {
     }
     createNewUser = async (data) => {
         try {
-            let res = await createNewUser(data)
+            let res = await createNewUserService(data)
 
             if (res && res.errCode === 1) {
                 alert(res.message)
@@ -57,12 +57,11 @@ class UserManage extends Component {
         catch (e) {
 
         }
-        console.log('>>check data', data)
     }
     getAllUser = async () => {
         let response = await getAllUsers('ALL')
 
-        if (response && response.errCode === 1) {
+        if (response && response.errCode === 0) {
 
             this.setState({
                 arrUsers: response.users,
@@ -85,7 +84,6 @@ class UserManage extends Component {
         }
     }
     handleEditUser = (user) => {
-        console.log('>>check user', user)
         this.setState({
             isOpenEditUser: true,
             userEdit: user
